@@ -27,12 +27,12 @@ python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-7B" --use_woq_4bit
 
 * Qwen-7B WOQ INT4 GPTQ
 ```
-python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-7B-woq-4bit-gptq" --use_woq_4bit
+python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-7B-woq-4bit-gptq" --use_woq_4bit --use_gptq
 ```
 
 * Qwen-VL WOQ INT4 GPTQ
 ```
-python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL-woq-4bit-gptq" --use_woq_4bit
+python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL-woq-4bit-gptq" --use_woq_4bit --use_gptq
 ```
 
 * Video-Llava-7B WOQ INT4 RTN
