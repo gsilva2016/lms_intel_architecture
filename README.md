@@ -36,14 +36,12 @@ python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL-woq-4bit-gptq" 
 ```
 
 * Video-Llava-7B WOQ INT4 RTN
-```
-python run-demo.py --device_map "cpu" --model_name "Video-LLaVA-7B" --use_woq_4bit
-```
+
+Please visit TODO
 
 * Video-Llava-7B WOQ INT4 GPTQ
-```
-python run-demo.py --device_map "cpu" --model_name "Video-LLaVA-7B-woq-4bit-gptq" --use_woq_4bit
-```
+
+Please visit TODO
 
 
 ### Optimized XPU Demonstrations
@@ -65,20 +63,19 @@ python run-demo.py --device_map "xpu" --model_name "Qwen/Qwen-7B" --use_woq_4bit
 
 * Qwen-7B WOQ INT4 GPTQ
 ```
-python run-demo.py --device_map "xpu" --model_name "Qwen/Qwen-7B-woq-4bit-gptq" --use_woq_4bit
+Coming soon
 ```
 
 * Qwen-VL WOQ INT4 GPTQ
 ```
-python run-demo.py --device_map "xpu" --model_name "Qwen/Qwen-7B-woq-4bit-gptq" --use_woq_4bit
+Coming soon
 ```
 
 * Video-Llava-7B WOQ INT4 RTN
-```
-python run-demo.py --device_map "xpu" --model_name "LanguageBind/Video-LLaVA-7B" --use_woq_4bit
-```
+
+Please visit TODO
 
 * Video-Llava-7B WOQ INT4 GPTQ
 ```
-python run-demo.py --device_map "xpu" --model_name "Video-LLaVA-7B-woq-4bit-gptq" --use_woq_4bit
+Coming soon
 ```
