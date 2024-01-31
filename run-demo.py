@@ -95,18 +95,17 @@ elif device_map == "xpu" and load4bit == True:
          quantization_config=quantization_config,
          ).eval()
 
-if device_map == "xpu":
-  print("Starting IPEX optimize_transformers for XPU...")
-  model = ipex.optimize_transformers(model, inplace=True, dtype=torch.float16, woq=True, device="xpu")
-
-print(".........Model loading and optimizations finished..........")
-print("Transformed model: ", model)
-      
 if not save_dir == "":
     print(".......Quantized model being saved.....")
     model.save_pretrained(save_dir)
     print("Saving quantized model completed.")
 
+if device_map == "xpu":
+  print("Starting IPEX optimize_transformers for XPU...")
+  model = ipex.optimize_transformers(model, inplace=True, dtype=torch.float16, woq=True, device="xpu")
+
+print(".........Model loading and optimizations finished..........")
+print("Optimized model: ", model)
 print("Starting 1st inference. This will take a while to initialize.....")
 
 start_time = time.time()
