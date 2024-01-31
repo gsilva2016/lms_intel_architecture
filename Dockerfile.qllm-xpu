@@ -13,7 +13,19 @@ RUN pip install decord opencv-python git+https://github.com/facebookresearch/pyt
 RUN pip install opencv-python-headless
 
 WORKDIR /qllm
+RUN apt-get update -y || true; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    build-essential cmake && \
+    rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/intel/intel-extension-for-pytorch.git ipex-gpu; cd ipex-gpu; git checkout -b dev/QLLM origin/dev/QLLM; git submodule update --init --recursive
-RUN cd ipex-gpu; source /opt/intel/oneapi/setvars.sh; python setup.py install
+
+RUN apt install -y ca-certificates gnupg2 gpg-agent && apt-get clean && rm -rf  /var/lib/apt/lists/*
+RUN wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor | tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
+RUN echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list
+RUN apt update
+RUN apt install -y zlib1g-dev python3-dev intel-basekit && \
+    apt-get clean && \
+    rm -rf  /var/lib/apt/lists/*
+SHELL ["/bin/bash", "-c"]
+RUN source /opt/intel/oneapi/setvars.sh; cd ipex-gpu; python setup.py install
 
 COPY run-demo.py .
