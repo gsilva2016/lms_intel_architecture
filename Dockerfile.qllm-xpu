@@ -1,5 +1,11 @@
 FROM intel/intel-extension-for-pytorch:2.1.10-xpu
+USER root
 
+RUN apt-get update -y || true; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    wget python3-opencv && \
+    rm -rf /var/lib/apt/lists/*
+
+# change below to not use 4.37? need to test without it first as < 4.36 is needed for video-llava
 RUN pip install transformers>4.36.0 sentencepiece==0.1.99 shortuuid accelerate==0.21.0 peft==0.4.0 "pydantic<2,>=1" "markdown2[all]" scikit-learn==1.2.2 gradio==3.35.2 gradio_client==0.2.9 httpx==0.24.0 uvicorn fastapi einops==0.6.1 einops-exts==0.0.4 timm==0.6.13
 RUN pip install neural-compressor intel-extension-for-transformers datasets
 RUN pip install deepspeed tiktoken protobuf transformers_stream_generator
@@ -10,3 +16,5 @@ RUN pip install opencv-python-headless
 WORKDIR /qllm
 RUN git clone https://github.com/intel/intel-extension-for-pytorch.git ipex-gpu; cd ipex-gpu; git checkout -b dev/QLLM origin/dev/QLLM; git submodule update --init --recursive
 RUN cd ipex-gpu; python setup.py install
+
+COPY run-demo.py .
