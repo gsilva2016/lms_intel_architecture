@@ -2,7 +2,7 @@ FROM intel/intel-extension-for-pytorch:2.1.10-xpu
 USER root
 
 RUN apt-get update -y || true; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    wget python3-opencv && \
+    wget git python3-opencv && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install transformers>4.36.0 sentencepiece==0.1.99 shortuuid accelerate==0.21.0 peft==0.4.0 "pydantic<2,>=1" "markdown2[all]" scikit-learn==1.2.2 gradio==3.35.2 gradio_client==0.2.9 httpx==0.24.0 uvicorn fastapi einops==0.6.1 einops-exts==0.0.4 timm==0.6.13
