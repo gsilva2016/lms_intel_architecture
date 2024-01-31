@@ -12,7 +12,7 @@ docker build -t qllm-cpu:1.0 -f Dockerfile.qllm-cpu .
 
  * Start CPU Docker Container shell
 ```
-docker run --rm --user root -it -v `pwd`:/savedir --net host --device /dev/dri/renderD129 qllm-xpu:1.0
+docker run --rm -it -v `pwd`:/savedir --net host qllm-cpu:1.0
 ```
 
 * Qwen-7B FP32 LLM
@@ -55,7 +55,7 @@ docker build -t qllm-xpu:1.0 -f Dockerfile.qllm-xpu .
 
 * Start XPU Docker Container shell. Replace renderD129 with your GPU from your machine in /dev/dri
 ```
-docker run --rm --user root -it -v `pwd`:/savedir --net host --device /dev/dri/renderD129 qllm-xpu:1.0
+docker run --rm -it -v `pwd`:/savedir --net host --device /dev/dri/renderD129 qllm-xpu:1.0
 ```
 
 * Qwen-7B WOQ INT4 RTN
