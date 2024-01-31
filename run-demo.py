@@ -124,7 +124,7 @@ if device_map == "xpu":
   torch.xpu.synchronize()
 elapsed_time = time.time() - start_time
 print("First inference response: " , response)
-print("Time taken for first query: ", elapsed_time)
+print("Seconds taken for first query: ", elapsed_time)
 
 print("Starting inference second query...")
 start_time = time.time()
@@ -139,6 +139,6 @@ response = model.generate(input_ids)
 response = tokenizer.batch_decode(response, skip_special_tokens=True)
 elapsed_time = time.time() - start_time
 print("Second inference response: " , response)
-print("Time taken for second query: ", elapsed_time)
+print("Seconds taken for second query: ", elapsed_time)
 if device_map == "xpu":
     torch.xpu.synchronize()
