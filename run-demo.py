@@ -100,7 +100,7 @@ if device_map == "xpu":
   model = ipex.optimize_transformers(model, inplace=True, dtype=torch.float16, woq=True, device="xpu")
 
 print(".........Model loading and optimizations finished..........")
-print("Transformed model: , model)
+print("Transformed model: ", model)
       
 if not save_dir == "":
     print(".......Quantized model being saved.....")
