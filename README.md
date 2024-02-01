@@ -30,7 +30,7 @@ python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-7B" --use_woq_4bit
 python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-7B" --use_woq_4bit --use_gptq
 ```
 
-* Qwen-VL WOQ INT4 RTN
+* Qwen-VL WOQ INT4 RTN (Not Supported)
 ```
 python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL" --use_woq_4bit
 ```
