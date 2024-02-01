@@ -110,7 +110,7 @@ print("Starting 1st inference. This will take a while to initialize.....")
 
 start_time = time.time()
 query = "Why are LLMs large is size?"
-if model_name == "Qwen/Qwen-VL-Chat":
+if model_name == "Qwen/Qwen-VL":
   query = tokenizer.from_list_format([
     {'image': 'https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg'},
     {'text': 'Describe this picture.'},
@@ -128,7 +128,7 @@ print("Seconds taken for first query: ", elapsed_time)
 print("Starting inference second query...")
 start_time = time.time()
 query = "Explain the pros and cons of AI with Intel architecture."
-if model_name == "Qwen/Qwen-VL-Chat":
+if model_name == "Qwen/Qwen-VL":
   query = tokenizer.from_list_format([
     {'text': 'Explain the pros and cons of AI with Intel architecture.'}
   ])
