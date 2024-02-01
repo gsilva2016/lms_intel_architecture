@@ -45,6 +45,12 @@ python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL-Chat" --use_woq
 python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL-Chat" --use_woq_4bit --use_gptq
 ```
 
+* Llava FP32 LVLM
+```
+python run-demo.py --device_map "cpu" --model_name "llava-hf/llava-1.5-7b-hf"
+```
+
+
 * Video-Llava-7B WOQ INT4 RTN
 
 Please visit TODO
