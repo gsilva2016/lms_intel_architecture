@@ -50,14 +50,19 @@ python run-demo.py --device_map "cpu" --model_name "Qwen/Qwen-VL-Chat" --use_woq
 python run-demo.py --device_map "cpu" --model_name "llava-hf/llava-1.5-7b-hf"
 ```
 
+* Video-Llava-7 FP32 LMM - Follow instructions in the section titled "CPU Based Gradeio in Docker Container"
+```
+https://github.com/gsilva2016/Video-LLaVA/tree/cpu_int4
+```
 
-* Video-Llava-7B WOQ INT4 RTN
 
-Please visit TODO
+* Video-Llava-7B WOQ INT4 RTN (Not Supported)
 
-* Video-Llava-7B WOQ INT4 GPTQ
+Coming soon
 
-Please visit TODO
+* Video-Llava-7B WOQ INT4 GPTQ (Not Supported)
+
+Coming soon
 
 
 ### Optimized XPU Demonstrations
