@@ -1,7 +1,7 @@
 # Large Language Models (LLM), Large Vision Language Models (LVLM), and Large Multimodal Models (LMM) for Retail Use Cases on Scalable Intel XPU Architecture
 
 
-## PyTorch* - Intel® Extnesion for PyTorch and Transformers, Intel® Neural Compressor Demonstrations
+## PyTorch* - Intel® Extension for PyTorch and Transformers, Intel® Neural Compressor Demonstrations
 
 ### Optimized CPU Demonstrations
 
@@ -52,7 +52,7 @@ python run-demo.py --device_map "cpu" --model_name "llava-hf/llava-1.5-7b-hf"
 
 * Video-Llava-7 FP32 LMM - Follow instructions in the section titled "CPU Based Gradeio in Docker Container"
 ```
-https://github.com/gsilva2016/Video-LLaVA/tree/cpu_int4
+https://github.com/gsilva2016/Video-LLaVA/tree/cpu
 ```
 
 
